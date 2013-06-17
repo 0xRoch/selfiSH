@@ -27,7 +27,7 @@ runSelfUpdate() {
   echo "Done."
 
   # Copy over modes from old version
-  OCTAL_MODE=$(stat -c '%a' $SELF)
+  OCTAL_MODE=$(stat -f '%p' $SELF)
   if ! chmod $OCTAL_MODE "$0.tmp" ; then
     echo "Failed: Error while trying to set mode on $0.tmp."
     exit 1
