@@ -2,7 +2,7 @@
 # To run: 
 #   bash < <(curl -s https://github.com/$author_name/$base_name/raw/$tag/install)
 
-url=
+url=https://raw.github.com/D-Roch/selfiSH/master/script.sh
 
 function show_usage () {
   cat <<USAGE
