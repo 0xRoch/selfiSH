@@ -27,11 +27,7 @@ runSelfUpdate() {
   echo "Done."
 
   # Copy over modes from old version
-  if [[ uname == 'Darwin' ]]; then
-   OCTAL_MODE=$(stat -f '%p' $SELF)
-  elif [[ uname == 'Linux' ]]; then
-   OCTAL_MODE=$(stat -c '%a' $SELF)
-  fi
+  OCTAL_MODE=$(stat -c '%a' $SELF)
   if ! chmod $OCTAL_MODE "$0.tmp" ; then
     echo "Failed: Error while trying to set mode on $0.tmp."
     exit 1
